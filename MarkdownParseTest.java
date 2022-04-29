@@ -56,6 +56,6 @@ public class MarkdownParseTest {
         String a = Files.readString(filePath);
         ArrayList<String> links = MarkdownParse.getLinks(a);
         List<String> list = List.of("https://something.com","some-thing.html");
-        assertEquals(list,links);
+        assertEquals("fail",links);
     }
 }
