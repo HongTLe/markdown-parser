@@ -49,4 +49,13 @@ public class MarkdownParseTest {
         List<String> list = List.of("https://something.com","some-thing.html");
         assertEquals(list,links);
     }
+
+    @Test
+    public void filelinks5()  throws IOException{
+        Path filePath = Path.of("C:/Users/Greg/Documents/GitHub/markdown-parser/Markdown.md");
+        String a = Files.readString(filePath);
+        ArrayList<String> links = MarkdownParse.getLinks(a);
+        List<String> list = List.of("https://something.com","some-thing.html");
+        assertEquals("fail",links);
+    }
 }
