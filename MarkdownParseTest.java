@@ -1,7 +1,5 @@
 import static org.junit.Assert.*;
 
-import javax.crypto.spec.PBEKeySpec;
-
 import org.junit.*;
 import java.util.*;
 import java.io.IOException;
@@ -51,13 +49,6 @@ public class MarkdownParseTest {
     }
 
     @Test
-<<<<<<< HEAD
-    public void vim() throws IOException{
-	    int duck = 2;
-	    int bird = 2;
-	    assertEquals(duck, bird);
-    }	    
-=======
     public void filelinks5()  throws IOException{
         Path filePath = Path.of("./Markdown.md");
         String a = Files.readString(filePath);
@@ -65,5 +56,4 @@ public class MarkdownParseTest {
         List<String> list = List.of("https://something.com","some-thing.html");
         assertEquals(list,links);
     }
->>>>>>> 06a85c2fd1fb63f71deef2a877f23031112d795d
 }
