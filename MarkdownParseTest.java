@@ -61,7 +61,7 @@ public class MarkdownParseTest {
     public void Snip1test() throws IOException{
         Path filePath = Path.of("./Snippet1.md");
         String a = Files.readString(filePath);
-        ArrayList<String> links = ReviewedMarkdownParse.getLinks(a);
+        ArrayList<String> links = MarkdownParse.getLinks(a);
         List<String> list = List.of("'google.com");
         assertEquals(list,links);
     }
@@ -70,13 +70,40 @@ public class MarkdownParseTest {
     public void Snip2test() throws IOException{
         Path filePath = Path.of("./Snippet2.md");
         String a = Files.readString(filePath);
-        ArrayList<String> links = ReviewedMarkdownParse.getLinks(a);
+        ArrayList<String> links = MarkdownParse.getLinks(a);
         List<String> list = List.of("a.com", "a.com(())", "example.com");
         assertEquals(list,links);
     }
 
     @Test
     public void Snip3test() throws IOException{
+        Path filePath = Path.of("./Snippet3.md");
+        String a = Files.readString(filePath);
+        ArrayList<String> links = MarkdownParse.getLinks(a);
+        List<String> list = List.of("https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule");
+        assertEquals(list,links);
+    }
+
+    @Test
+    public void Snip1revtest() throws IOException{
+        Path filePath = Path.of("./Snippet1.md");
+        String a = Files.readString(filePath);
+        ArrayList<String> links = ReviewedMarkdownParse.getLinks(a);
+        List<String> list = List.of("'google.com");
+        assertEquals(list,links);
+    }
+
+    @Test
+    public void Snip2revtest() throws IOException{
+        Path filePath = Path.of("./Snippet2.md");
+        String a = Files.readString(filePath);
+        ArrayList<String> links = ReviewedMarkdownParse.getLinks(a);
+        List<String> list = List.of("a.com", "a.com(())", "example.com");
+        assertEquals(list,links);
+    }
+
+    @Test
+    public void Snip3revtest() throws IOException{
         Path filePath = Path.of("./Snippet3.md");
         String a = Files.readString(filePath);
         ArrayList<String> links = ReviewedMarkdownParse.getLinks(a);
