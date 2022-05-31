@@ -49,4 +49,11 @@ public class MarkdownParseTest {
         List<String> list = List.of("https://something.com","some-thing.html");
         assertEquals(list,links);
     }
+
+    @Test
+    public void vim() throws IOException{
+	    int duck = 2;
+	    int bird = 2;
+	    assertEquals(duck, bird);
+    }	    
 }
