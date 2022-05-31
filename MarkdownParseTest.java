@@ -16,7 +16,7 @@ public class MarkdownParseTest {
 
     @Test
     public void filelinks()  throws IOException{
-        Path filePath = Path.of("C:/Users/Greg/Documents/GitHub/markdown-parser/test-file.md");
+        Path filePath = Path.of("./test-file.md");
         String a = Files.readString(filePath);
         ArrayList<String> links = MarkdownParse.getLinks(a);
         List<String> list = List.of("https://something.com","some-thing.html");
@@ -25,7 +25,7 @@ public class MarkdownParseTest {
     
     @Test
     public void filelinks2()  throws IOException{
-        Path filePath = Path.of("C:/Users/Greg/Documents/GitHub/markdown-parser/test2.md");
+        Path filePath = Path.of("./test2.md");
         String a = Files.readString(filePath);
         ArrayList<String> links = MarkdownParse.getLinks(a);
         List<String> list = List.of("https://something.com","some-thing.html");
@@ -34,7 +34,7 @@ public class MarkdownParseTest {
 
     @Test
     public void filelinks3()  throws IOException{
-        Path filePath = Path.of("C:/Users/Greg/Documents/GitHub/markdown-parser/Test3.md");
+        Path filePath = Path.of("./Test3.md");
         String a = Files.readString(filePath);
         ArrayList<String> links = MarkdownParse.getLinks(a);
         List<String> list = List.of("some-thing.html");
@@ -43,7 +43,7 @@ public class MarkdownParseTest {
 
     @Test
     public void filelinks4()  throws IOException{
-        Path filePath = Path.of("C:/Users/Greg/Documents/GitHub/markdown-parser/Markdown.md");
+        Path filePath = Path.of("./Markdown.md");
         String a = Files.readString(filePath);
         ArrayList<String> links = MarkdownParse.getLinks(a);
         List<String> list = List.of("https://something.com","some-thing.html");
@@ -51,9 +51,19 @@ public class MarkdownParseTest {
     }
 
     @Test
+<<<<<<< HEAD
     public void vim() throws IOException{
 	    int duck = 2;
 	    int bird = 2;
 	    assertEquals(duck, bird);
     }	    
+=======
+    public void filelinks5()  throws IOException{
+        Path filePath = Path.of("./Markdown.md");
+        String a = Files.readString(filePath);
+        ArrayList<String> links = MarkdownParse.getLinks(a);
+        List<String> list = List.of("https://something.com","some-thing.html");
+        assertEquals(list,links);
+    }
+>>>>>>> 06a85c2fd1fb63f71deef2a877f23031112d795d
 }
