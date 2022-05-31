@@ -62,7 +62,7 @@ public class MarkdownParseTest {
         Path filePath = Path.of("./Snippet1.md");
         String a = Files.readString(filePath);
         ArrayList<String> links = MarkdownParse.getLinks(a);
-        List<String> list = List.of("'google.com");
+        List<String> list = List.of("'google.com", "google.com", "ucsd.edu");
         assertEquals(list,links);
     }
 
@@ -80,7 +80,8 @@ public class MarkdownParseTest {
         Path filePath = Path.of("./Snippet3.md");
         String a = Files.readString(filePath);
         ArrayList<String> links = MarkdownParse.getLinks(a);
-        List<String> list = List.of("https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule");
+        List<String> list = List.of("https://www.twitter.com", 
+        "https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule", "https://cse.ucsd.edu/");
         assertEquals(list,links);
     }
 
@@ -89,7 +90,7 @@ public class MarkdownParseTest {
         Path filePath = Path.of("./Snippet1.md");
         String a = Files.readString(filePath);
         ArrayList<String> links = ReviewedMarkdownParse.getLinks(a);
-        List<String> list = List.of("'google.com");
+        List<String> list = List.of("'google.com", "google.com", "ucsd.edu");
         assertEquals(list,links);
     }
 
@@ -107,7 +108,8 @@ public class MarkdownParseTest {
         Path filePath = Path.of("./Snippet3.md");
         String a = Files.readString(filePath);
         ArrayList<String> links = ReviewedMarkdownParse.getLinks(a);
-        List<String> list = List.of("https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule");
+        List<String> list = List.of("https://www.twitter.com", 
+        "https://sites.google.com/eng.ucsd.edu/cse-15l-spring-2022/schedule", "https://cse.ucsd.edu/");
         assertEquals(list,links);
     }
 }
